@@ -589,8 +589,8 @@ function winGame() {
     state = "won";
     stopActiveGame();
     boss.className = "boss";
-    gameTitle.textContent = "Una flor para ti";
-    levelLabel.textContent = "RECOMPENSA FINAL";
+    gameTitle.textContent = "Echale ganitas";
+    levelLabel.textContent = "";
     clearFinale();
     winScreen.classList.add("active");
     defeatedStage.classList.add("active");

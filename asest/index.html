@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#170f2e">
+    <title>La prueba de los 1000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game-page">
+        <section class="game-container" aria-label="Juego de atrapar objetos">
+            <header class="game-header">
+                <div>
+                    <p id="level-label" class="eyebrow">NIVEL 1 · PIXEL CHALLENGE</p>
+                    <h1 id="game-title">La prueba de los 500</h1>
+                </div>
+                <div class="hud">
+                    <div class="score-box">
+                        <span>PUNTOS</span>
+                        <strong><span id="score">0</span><small id="score-goal">/500</small></strong>
+                    </div>
+                    <button id="sound-button" class="sound-button" type="button" aria-label="Silenciar música" aria-pressed="false">♪</button>
+                </div>
+            </header>
+
+            <div id="game">
+                <div class="sky-glow" aria-hidden="true"></div>
+                <div class="city" aria-hidden="true"></div>
+                <div id="boss" class="boss" aria-hidden="true">
+                    <img id="boss-sprite" src="asest/jefa-boca%20cerrada.png" alt="">
+                </div>
+                <div id="player" aria-label="Personaje de la jugadora">
+                    <img id="player-sprite" src="asest/player-idle.png" alt="">
+                </div>
+                <div id="point-message" aria-live="polite"></div>
+
+                <div id="start-screen" class="screen active">
+                    <div class="panel start-panel">
+                        <span class="mini-star">✦</span>
+                        <h2>¿LISTA PARA<br>EL RETO?</h2>
+                        <p>Atrapa objetos, descubre sus efectos<br>y llega a 500.</p>
+                        <button id="play-button" class="pixel-button" type="button">▶ PLAY</button>
+                        <small>Usa A / D, las flechas o los botones</small>
+                    </div>
+                </div>
+
+                <div id="intro-screen" class="screen" aria-live="assertive">
+                    <p id="intro-text"></p>
+                </div>
+
+                <div id="win-screen" class="screen">
+                    <div id="defeated-stage" class="final-stage defeated-stage">
+                        <img src="asest/jefa%20derrotada.png" alt="Jefa derrotada">
+                        <h2>¡JEFA DERROTADA!</h2>
+                    </div>
+                    <div id="flower-stage" class="final-stage flower-stage">
+                        <button id="flower-button" class="flower-button" type="button" aria-label="Abrir la flor">
+                            <img id="flower-sprite" src="asest/flor%201.png" alt="Flor amarilla cerrada">
+                            <span id="flower-hint">TOCA LA FLOR</span>
+                        </button>
+                        <p id="gift-message">TE REGALO UNA FLOR<br>QUE NADIE TE A DADO.</p>
+                        <button id="restart-button" class="pixel-button final-restart" type="button">JUGAR OTRA VEZ</button>
+                    </div>
+                </div>
+
+                <div id="lose-screen" class="screen">
+                    <div class="panel lose-panel">
+                        <span class="lose-icon">×</span>
+                        <h2>MAMASTE</h2>
+                        <p>La canción terminó antes de llegar a 1000 puntos.</p>
+                        <button id="retry-button" class="pixel-button" type="button">INTENTAR OTRA VEZ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls" aria-label="Controles de movimiento">
+                <button id="left-button" type="button" aria-label="Mover a la izquierda">◀</button>
+                <button id="right-button" type="button" aria-label="Mover a la derecha">▶</button>
+            </div>
+            <div class="instructions">
+                <span><i class="dot good"></i> Elote +10 · Tacos +20 · Sombrero +15</span>
+                <span><i class="dot cat"></i> Gato: cae lento e inmuniza por 5 s</span>
+                <span><i class="dot boost"></i> Tarro: velocidad ×2 por 3 s</span>
+                <span id="boss-rule" class="boss-rule"><i class="dot computer"></i> Computadora: −20 y lentitud por 5 s</span>
+            </div>
+        </section>
+    </main>
+
+    <audio id="music" src="asest/LATIN%20MAFIA%2C%20Fred%20again..%20-%20Quiereme.mp3" preload="metadata"></audio>
+    <script src="game.js"></script>
+</body>
+</html>
